@@ -14,7 +14,7 @@ elif os.getenv('ENV') == 'github':
     app.config.from_object('config.GithubCIConfig')
 else:
     print("Running in production mode")
-    app.config.from_object('config.ProductionConfig')
+    app.config.from_object('config.DevelopmentConfig')
 db = SQLAlchemy(app)
 from iebank_api.models import Account
 db.create_all()
