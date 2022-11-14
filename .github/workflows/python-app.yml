@@ -10,16 +10,17 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
-env:
-  ENV: ghci
+
 
 permissions:
   contents: read
 
 jobs:
   build:
-
+    
     runs-on: ubuntu-latest
+    env:
+      ENV: ghci
 
     steps:
     - uses: actions/checkout@v3
