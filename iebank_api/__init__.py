@@ -14,7 +14,7 @@ elif os.getenv('ENV') == 'ghci':
     app.config.from_object('config.GithubCIConfig')
 else:
     print("Running in production mode")
-    app.config.from_object('config.DevelopmentConfig')
+    app.config.from_object('config.ProductionConfig')
 db = SQLAlchemy(app)
 from iebank_api.models import Account
 db.create_all()
